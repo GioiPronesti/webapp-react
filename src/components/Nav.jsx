@@ -9,14 +9,14 @@ function Nav() {
     { label: 'Contact', path: '/contact' }
   ]
 
-  return <nav>
+  return <nav className='flex-nav'>
     <ul className='flex-link'>
       {
         menu.map(({path, label}, i) => {
           return <li key={i}>
             <NavLink className='link' to={path}>
               {({ isActive }) => {
-                return <span className={ isActive ? 'text-blue' : ''}>{
+                return <span className={ isActive ? 'active-text-blue' : ''}>{
                   label
                 }</span>
               }}

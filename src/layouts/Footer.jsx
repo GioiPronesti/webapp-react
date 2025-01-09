@@ -5,10 +5,10 @@ function Footer(){
 
     return (
 
-    <footer className="bg-blue">
+    <footer className="bg-footer">
         <div className="container">
             <section>
-                <div className="link-home">
+                <div className="footer-link-home">
                     <Link to="/">Torna alla home</Link>
                 </div>
             </section> 

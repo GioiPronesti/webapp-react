@@ -13,7 +13,10 @@ function HomePage() {
       </div>
     </section>
     <section>
-      elenco dei film
+        <div className="container">
+            elenco dei film
+        </div>
+      
     </section>
   </>
 }
