@@ -1,12 +1,24 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import DefaultLayouts from "./layouts/DefaultLayout"
+import HomePage from "./pages/HomePage"
+import MoviePage from "./pages/movies/MoviePage"
+import AboutPage from "./pages/AboutPage"
+import ContactPage from "./pages/ContactPage"
 
 function App() {
 
   return (
-    <>
-       <div>
-          <h1>Web app books</h1>
-       </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<DefaultLayouts />}>
+          <Route path="/" element={<HomePage/>} />
+          <Route path='/movie/:id' element={<MoviePage />} />
+          <Route path='/about' element={<AboutPage />} />
+          <Route path='/contact' element={<ContactPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+
   )
 }
 
