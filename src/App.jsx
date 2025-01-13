@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route element={<DefaultLayouts />}>
           <Route path="/" element={<HomePage/>} />
-          <Route path='/movie/:id' element={<MoviePage />} />
+          <Route path='/movies/:id' element={<MoviePage />} />
           <Route path='/about' element={<AboutPage />} />
           <Route path='/contact' element={<ContactPage />} />
         </Route>
