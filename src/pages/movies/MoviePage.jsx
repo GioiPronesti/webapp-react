@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import ReviewCard from "../../components/ReviewCard";
 
 function MoviePage() {
 
@@ -49,7 +50,14 @@ function MoviePage() {
           <h2>Tutte le recensioni</h2>
         </div>
         <div className="container">
-          elenco delle recensioni
+        {movie.reviews.length ? 
+          <ul className="container reviews-grid">
+            {movie.reviews.map(review => (
+              <ReviewCard review={review} key={review.id} />
+            )) }
+          </ul>:
+        <div>Nessuna recensione</div>
+        }
         </div>
       </section>
       {/* form per nuova recensione */}
