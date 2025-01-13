@@ -14,7 +14,9 @@ function MoviePage() {
 
     function fetchMovie() {
 
-      axios.get(`${import.meta.env.VITE_API_URL}/movies/${id}`)
+       axios.get(`http://localhost:3000/api/movies/${id}`)
+        //axios.get(`${import.meta.env.VITE_API_URL}/movies/${id}`)
+     
       .then(res => {
         setMovie(res.data)
       })

@@ -21,7 +21,7 @@ function HomePage() {
 
 
   useEffect(() => {
-        fetchMovies()  
+    fetchMovies()  
   },[])
     
   return <>
