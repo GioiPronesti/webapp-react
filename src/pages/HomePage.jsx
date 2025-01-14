@@ -6,10 +6,16 @@ import MovieCard from "../components/MovieCard"
 function HomePage() {
 
   const [movies, setMovies] = useState([])
+  const [search, setSearch] = useState("")
+
 
   function fetchMovies(){
 
-      axios.get("http://localhost:3000/api/movies")
+      axios.get("http://localhost:3000/api/movies",{
+        params: {
+          search: search
+        }
+      })
       .then(response => {
         console.log(response)
         setMovies(response.data)
@@ -19,6 +25,13 @@ function HomePage() {
       })
   }
 
+  function searchMovies(e){
+    e.preventDefault()
+
+    fetchMovies()
+  }
+
+  
 
   useEffect(() => {
     fetchMovies()  
@@ -31,6 +44,13 @@ function HomePage() {
           <h1 className='heading'>Bool Movies</h1>
           <h2 className='text-lg'>La galleria dei film popolari in boolean!</h2>
         </div>
+        <form onSubmit={searchMovies}>
+          <input className="search-input" type="text"
+            placeholder="cerca il film" value={search}
+            onChange={(e) => {setSearch(e.target.value)}}
+          />
+          <button className="search-film">Cerca</button>
+        </form>
       </div>
     </section>
     <section>
